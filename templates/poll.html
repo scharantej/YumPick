@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Poll</title>
+</head>
+<body>
+<h1>Poll</h1>
+<p>
+Vote for your favorite dish!
+</p>
+<form action="/poll" method="POST">
+{% for dish in dishes %}
+<input type="radio" name="dish_id" value="{{ dish.id }}">
+<label for="{{ dish.id }}">{{ dish.name }}</label><br>
+{% endfor %}
+<input type="submit" value="Vote">
+</form>
+</body>
+</html>
+
+
